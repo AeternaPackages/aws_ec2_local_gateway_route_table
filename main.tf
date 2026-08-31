@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.ec2_local_gateway_route_tables : {
       for k2, v2 in coalesce(v1.ec2_local_gateway_routes, {}) :
       "${k1}/${k2}" => merge(v2, {
-        local_gateway_route_table_id = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_id["${k1}"]
+        local_gateway_route_table_id = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_local_gateway_route_table_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.ec2_local_gateway_route_tables : {
       for k2, v2 in coalesce(v1.ec2_local_gateway_route_table_virtual_interface_group_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        local_gateway_route_table_id = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_id["${k1}"]
+        local_gateway_route_table_id = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_local_gateway_route_table_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.ec2_local_gateway_route_tables : {
       for k2, v2 in coalesce(v1.ec2_local_gateway_route_table_vpc_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        local_gateway_route_table_id = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_id["${k1}"]
+        local_gateway_route_table_id = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_local_gateway_route_table_id["${k1}"]
       })
     }
   ]...)
