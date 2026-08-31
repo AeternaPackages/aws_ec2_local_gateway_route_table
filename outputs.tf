@@ -1,9 +1,4 @@
 # --- aws_ec2_local_gateway_route_table ---
-output "ec2_local_gateway_route_tables_id" {
-  description = "Map of id values across all ec2_local_gateway_route_tables, keyed the same as var.ec2_local_gateway_route_tables"
-  value       = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_id
-}
-
 output "ec2_local_gateway_route_tables_arn" {
   description = "Map of arn values across all ec2_local_gateway_route_tables, keyed the same as var.ec2_local_gateway_route_tables"
   value       = module.ec2_local_gateway_route_tables.ec2_local_gateway_route_tables_arn
